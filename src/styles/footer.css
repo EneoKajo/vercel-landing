@@ -1,6 +1,6 @@
 /* Footer Styles */
 .footer-container {
-  position: relative; /* Changed from absolute */
+  position: absolute; /* Changed from absolute */
   width: 100%;
   padding: 25px 0; /* Increased for consistent height */
   margin-top: auto; /* This pushes footer to bottom when used with flexbox */
