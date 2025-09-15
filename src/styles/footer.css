@@ -1,10 +1,10 @@
 /* Footer Styles */
 .footer-container {
-  position: absolute; /* Changed from absolute */
-  width: 100%;
-  padding: 25px 0; /* Increased for consistent height */
-  margin-top: auto; /* This pushes footer to bottom when used with flexbox */
-  min-height: 65px; /* Set consistent minimum height */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
 }
 
 .footer-container::before {
@@ -16,7 +16,7 @@
   height: 2px;
   background: rgb(206, 178, 206);
   opacity: 0.6;
-  box-shadow: 0 0 10px rgb(206, 178, 206); /* Fixed the typo - removed 'r' */
+  box-shadow: 0 0 10px rgb(206, 178, 206);
 }
 
 .footer-main {
@@ -26,10 +26,8 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  height: 100%; /* Use full container height */
 }
 
-/* Rest of your styles remain the same */
 .footer-main ul {
   display: flex;
   flex-direction: row;
@@ -70,11 +68,6 @@
 }
 
 @media (max-width: 768px) {
-  .footer-container {
-    padding: 20px 0;
-    min-height: 60px;
-  }
-  
   .footer-main ul {
     gap: 20px;
     flex-wrap: wrap;
@@ -86,11 +79,6 @@
 }
 
 @media (max-width: 480px) {
-  .footer-container {
-    padding: 18px 0;
-    min-height: 55px;
-  }
-  
   .footer-main ul {
     gap: 15px;
   }
