@@ -1,0 +1,94 @@
+/* Footer Styles */
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0;
+}
+
+.footer-container::before {
+  content: '';
+  position: absolute;
+  top: 0; /* adjust this to move the white line up and down */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgb(206, 178, 206);
+  opacity: 0.6;
+  box-shadow: 0 0 10px rgb(206, 178, 206)r; /* Add this for glow */
+
+}
+
+.footer-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-main ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-main ul li {
+  color:#2d1b69d3;
+  font-size: 0.9rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: relative; /* Add this */
+
+}
+
+.footer-main ul li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: #2D1B69;
+  transition: width 0.3s ease;
+}
+
+.footer-main ul li:hover {
+  color: #2D1B69;
+  transform: translateY(-1px);
+
+}
+
+.footer-main ul li:hover::after {
+  width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+  .footer-main ul {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-main ul li {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-main ul {
+    gap: 15px;
+  }
+
+  .footer-main ul li {
+    font-size: 0.75rem;
+  }
+}

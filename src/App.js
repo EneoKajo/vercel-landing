@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import Home from './views/home'
+import ServiceErea from './views/cs'
+import CheckoutPage from './views/checkoutpage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+  const router = createBrowserRouter([
+  { path:'/', element:<Home/>},
+  { path:'/terms', element:<ServiceErea/>},
+  { path:'/checkout', element:<CheckoutPage/>}, // Add this route
+  { path:'/pay/checkout', element:<CheckoutPage/>}, // Alternative route
+])
+
+
+  return(
+  
+  
+  <RouterProvider router={router}/>
+
+
+)
 }
 
-export default App;
+export default App

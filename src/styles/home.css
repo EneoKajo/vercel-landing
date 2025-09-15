@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
+}
+
+.home-container {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+
+.title {
+  text-align: center;
+    animation: slideInLeft 0.8s ease-out;
+
+}
+
+.title h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #000000;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.get-started {
+  text-align: center;
+  margin-top: 3rem;
+    animation: slideInRight 0.8s ease-out 0.3s both;
+
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+
+.main-card{
+    margin-top: 4%; /* adjust this for moving up and down */
+    margin-bottom: 7%;
+    flex-direction: column;
+}
+
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  .title, .get-started {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Responsive sizes */
+@media (max-width: 768px) {
+  .main-card{
+    margin-top: 15%; /* adjust this for moving up and down */
+    margin-bottom: 15%;
+  }
+  .title h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-card{
+    margin-top: 4%; /* adjust this for moving up and down */
+    margin-bottom: 15%;
+  }
+  .title h1 {
+    font-size: 2rem;
+  }
+}
+
