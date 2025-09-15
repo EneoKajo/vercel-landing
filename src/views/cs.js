@@ -109,7 +109,7 @@ function ServiceErea(){
       </button>
 
       {/* Footer */}
-        <Footer className="footer-container" style={{padding: '30px 0', minHeight: '90px'}}></Footer>
+        <Footer/>
     </div>
   );
 }

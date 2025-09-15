@@ -69,6 +69,7 @@
 
 @media (max-width: 768px) {
   .footer-container{
+    min-height: 60px;
     max-height: 60px;
   }
 
@@ -84,6 +85,7 @@
 
 @media (max-width: 480px) {
   .footer-container{
+    min-height: 60px;
     max-height: 60px;
   }
   .footer-main ul {

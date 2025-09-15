@@ -34,7 +34,7 @@ function Home(){
 
 
         
-        <Footer className="footer-container" style={{padding: '20px 0', maxHeight: '90px'}}></Footer>
+        <Footer/>
         </>
     )
 }
