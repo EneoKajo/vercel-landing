@@ -73,10 +73,6 @@
 
 
 @media (max-width: 768px) {
-  .footer-container {
-    padding: 12px 0;
-  }
-
   .footer-main ul {
     gap: 20px;
     flex-wrap: wrap;
@@ -88,10 +84,6 @@
 }
 
 @media (max-width: 480px) {
-  .footer-container {
-    padding: 10px 0;
-  }
-
   .footer-main ul {
     gap: 15px;
   }
