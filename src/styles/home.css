@@ -3,7 +3,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
 
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .home-container {
@@ -12,10 +17,13 @@
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  overflow-x: hidden;
 }
 
 
