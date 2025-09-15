@@ -3,6 +3,8 @@ import Home from './views/home'
 import ServiceErea from './views/cs'
 import CheckoutPage from './views/checkoutpage'
 
+//comment
+
 function App(){
   const router = createBrowserRouter([
   { path:'/', element:<Home/>},
