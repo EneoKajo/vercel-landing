@@ -110,7 +110,9 @@ function CheckoutPage() {
           {/* Header */}
           <div className="checkout-header">
             <div className="app-logo">
-              <div className="logo-icon">🌙</div>
+              <div className="logo-icon">
+                  <img src="/logo.png" alt="Vesper" style={{width: '40px', height: '40px'}} />
+              </div>
               <h1>Vesper Premium</h1>
             </div>
             <p className="checkout-subtitle">Unlock unlimited dream interpretations</p>
