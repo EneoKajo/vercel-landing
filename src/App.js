@@ -3,7 +3,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Home from './views/home'
 import ServiceErea from './views/cs'
 import CheckoutPage from './views/checkoutpage'
-import Loading from './components/loading'
+import Loading from './componenets/loading'
 
 function App(){
   const [isLoading, setIsLoading] = useState(true);
