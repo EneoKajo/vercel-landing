@@ -3,25 +3,43 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Home from './views/home'
 import ServiceErea from './views/cs'
 import CheckoutPage from './views/checkoutpage'
-import Loading from './componenets/loading'
+import Loading from './components/loading'
 
 function App(){
   const [isLoading, setIsLoading] = useState(true);
   const [showLoading, setShowLoading] = useState(true);
+  const [assetsLoaded, setAssetsLoaded] = useState(false);
+  const [timerComplete, setTimerComplete] = useState(false);
 
   useEffect(() => {
+    // Timer - minimum loading time
+    const timer = setTimeout(() => {
+      setTimerComplete(true);
+    }, 2000); // 2 seconds minimum
+
+    // Asset loading detection
     const handleLoad = () => {
-      setIsLoading(false);
+      setAssetsLoaded(true);
     };
 
     if (document.readyState === 'complete') {
-      setIsLoading(false);
+      setAssetsLoaded(true);
     } else {
       window.addEventListener('load', handleLoad);
     }
 
-    return () => window.removeEventListener('load', handleLoad);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('load', handleLoad);
+    };
   }, []);
+
+  // Only stop loading when BOTH conditions are met
+  useEffect(() => {
+    if (assetsLoaded && timerComplete) {
+      setIsLoading(false);
+    }
+  }, [assetsLoaded, timerComplete]);
 
   const handleLoadingComplete = () => {
     setShowLoading(false);
