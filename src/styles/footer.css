@@ -5,8 +5,7 @@
   left: 0;
   right: 0;
   padding: 20px 0;
-  background: linear-gradient(180deg, #c3b5fdc1 0%, #8a5cf6b2 100%);
-
+  background: radial-gradient(ellipse 150% 80% at center, rgba(196, 181, 253, 0.8) 0%, rgba(139, 92, 246, 0.6) 50%, rgba(139, 92, 246, 0.2) 100%);
 }
 
 .footer-container::before {
@@ -79,7 +78,7 @@
     display: flex;
     align-items: center;
     padding: 10px 0;
-    background: transparent;
+    background: radial-gradient(ellipse 150% 80% at center, rgba(196, 181, 253, 0.8) 0%, rgba(139, 92, 246, 0.6) 50%, rgba(139, 92, 246, 0.2) 100%);
     z-index: 1000;
   }
 
@@ -97,6 +96,8 @@
   .footer-container{
     height: 55px;
     padding: 8px 0;
+    background: radial-gradient(ellipse 150% 80% at center, rgba(196, 181, 253, 0.8) 0%, rgba(139, 92, 246, 0.6) 50%, rgba(139, 92, 246, 0.2) 100%);
+
   }
   .footer-main ul {
     gap: 15px;
