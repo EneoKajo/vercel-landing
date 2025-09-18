@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.notfound-container {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.notfound-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 80vh;
+}
+
+.notfound-card {
+  text-align: center;
+  animation: slideInUp 0.8s ease-out;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 600px;
+  width: 100%;
+}
+
+.notfound-title {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.notfound-title h1 {
+  font-size: 8rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: #8b5cf6;
+  margin: 0;
+  text-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
+}
+
+.notfound-subtitle {
+  animation: slideInRight 0.8s ease-out 0.2s both;
+  margin-bottom: 1.5rem;
+}
+
+.notfound-subtitle h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #000000;
+  margin: 1rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notfound-card p {
+  font-size: 1.3rem;
+  color: #333333;
+  margin: 2rem 0;
+  font-weight: 400;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  animation: slideInUp 0.8s ease-out 0.3s both;
+}
+
+.notfound-button {
+  animation: slideInUp 0.8s ease-out 0.4s both;
+  margin-top: 2rem;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+.download-btn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .notfound-content {
+    padding: 1rem;
+    min-height: 70vh;
+  }
+
+  .notfound-card {
+    padding: 3rem 2rem;
+  }
+
+  .notfound-title h1 {
+    font-size: 5rem;
+  }
+
+  .notfound-subtitle h2 {
+    font-size: 2rem;
+  }
+
+  .notfound-card p {
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+  }
+
+  .download-btn {
+    padding: 14px 28px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .notfound-title h1 {
+    font-size: 4rem;
+  }
+
+  .notfound-subtitle h2 {
+    font-size: 1.8rem;
+  }
+
+  .notfound-card p {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+
+  .download-btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notfound-title, .notfound-subtitle, .notfound-card, .notfound-button {
+    animation: fadeIn 0.5s ease-out;
+  }
+}

@@ -3,11 +3,18 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import legalDocuments from '../componenets/terms_and_policies.json';
 import Footer from '../componenets/footer';
 import '../styles/cs.css'
+import { useDocumentTitle } from "../utils/useDocumentTitle";
 
 function ServiceErea(){
+   useDocumentTitle(
+    'Terms and Conditions - Vesper Dream Journal',
+    'Terms and conditions for using Vesper dream interpretation app and services.'
+  );
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const docType = searchParams.get('doc') || 'terms-and-conditions';
+
+  
 
   const extendedLegalDocuments = {
     ...legalDocuments,

@@ -4,6 +4,7 @@ import Home from './views/home'
 import ServiceErea from './views/cs'
 import CheckoutPage from './views/checkoutpage'
 import Loading from './componenets/loading'
+import NotFound from './views/notfound';
 
 function App(){
   const [isLoading, setIsLoading] = useState(true);
@@ -50,6 +51,8 @@ function App(){
     { path:'/terms', element:<ServiceErea/>},
     { path:'/checkout', element:<CheckoutPage/>},
     { path:'/pay/checkout', element:<CheckoutPage/>},
+    { path:'/*', element:<NotFound/>}
+
   ])
 
   if (showLoading) {

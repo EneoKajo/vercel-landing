@@ -8,7 +8,7 @@
 html, body {
   width: 100%;
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .home-container {
@@ -16,21 +16,28 @@ html, body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
   width: 100%;
   max-width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
   overflow-x: hidden;
 }
 
+.home-content {
+  margin-top: 10%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2%;
+}
 
 .title {
   text-align: center;
-    animation: slideInLeft 0.8s ease-out;
-
+  animation: slideInLeft 0.8s ease-out;
 }
 
 .title h1 {
@@ -46,8 +53,7 @@ html, body {
 .get-started {
   text-align: center;
   margin-top: 3rem;
-    animation: slideInRight 0.8s ease-out 0.3s both;
-
+  animation: slideInRight 0.8s ease-out 0.3s both;
 }
 
 .download-btn {
@@ -72,26 +78,152 @@ html, body {
   transform: translateY(0);
 }
 
-
-.main-card{
-    margin-top: 4%; /* adjust this for moving up and down */
-    margin-bottom: 7%;
-    flex-direction: column;
+.main-card {
+  margin-top: 4%; /* adjust this for moving up and down */
+  margin-bottom: 3%;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.main-card p {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #333333;
+  margin: 2rem 0;
+  font-weight: 400;
+  line-height: 1.4;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  animation: slideInUp 0.8s ease-out 0.1s both;
+}
 
+.secondary-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin-left: 17%;
+  padding: 4rem 2rem;
+  animation: slideInUp 0.8s ease-out 0.4s both;
+}
 
+.secondary-text {
+  flex: 1;
+}
 
-@media (prefers-reduced-motion: reduce) {
-  .title, .get-started {
-    animation: fadeIn 0.5s ease-out;
+.secondary-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444444;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-image {
+  flex: 1.2;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.secondary-image img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.third-card {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin-left: 7.7%;
+  padding: 4rem 2rem;
+  animation: slideInUp 0.8s ease-out 0.4s both;
+  margin-bottom: 3%;
+  margin-top: -6rem;
+}
+
+.third-img {
+  flex: 1.1;
+  height: 500px;
+  width: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.third-img img {
+  width: 94%;
+  height: 94%;
+  object-fit: contain;
+  transform: scale(1);
+}
+
+.third-txt {
+  flex: 1;
+  max-width: 500px;
+  padding-right: 2rem;
+}
+
+.third-txt h3 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2d1b69;
+  line-height: 1.2;
+}
+
+.third-txt p:first-of-type {
+  font-size: 1.3rem;
+  color: #4a4a4a;
+  margin-bottom: 1.8rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.third-txt p:last-of-type {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #8b5cf6;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+}
+
+.third-txt .download-btn {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: 0.5px;
+}
+
+.third-txt .download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-
 }
 
 @keyframes slideInLeft {
@@ -116,25 +248,155 @@ html, body {
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
-/* Responsive sizes */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .main-card{
-    margin-top: 15%; /* adjust this for moving up and down */
-    margin-bottom: 15%;
+  .home-content {
+    margin-top: 30%; /* adjust this to center main-card on screen */
+    justify-content: flex-start;
   }
+
+  .main-card {
+    margin-top: 18%; /* adjust this to position main-card in center of viewport */
+    margin-bottom: 22%; /* adjust this to create space for elements below */
+  }
+
+  .main-card p {
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+  }
+
   .title h1 {
     font-size: 2.5rem;
+  }
+
+  .secondary-card {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin-left: 0;
+  }
+
+  .secondary-text {
+    text-align: center;
+  }
+
+  .secondary-image {
+    display: none;
+  }
+
+  .third-card {
+    margin-top: 2rem; /* adjust this to create space below secondary-card */
+    margin-bottom: 4rem; /* adjust this to create space above footer */
+    flex-direction: column;
+    margin-left: 0;
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .third-img {
+    display: none;
+  }
+
+  .third-txt {
+    max-width: 100%;
+    padding-right: 0;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: local;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    position: relative;
+  }
+
+  .third-txt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    z-index: 1;
+  }
+
+  .third-txt > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .third-txt h3 {
+    font-size: 1.8rem;
+  }
+
+  .third-txt p:first-of-type {
+    font-size: 1.1rem;
+  }
+
+  .third-txt p:last-of-type {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .main-card{
-    margin-top: 4%; /* adjust this for moving up and down */
-    margin-bottom: 15%;
+  .home-content {
+    margin-top: 25%; /* adjust this to center main-card on smaller screens */
   }
+
+  .main-card {
+    margin-top: 15%; /* adjust this value for positioning main-card in center */
+    margin-bottom: 20%; /* adjust this to create space for elements below */
+  }
+
+  .main-card p {
+    font-size: 1rem;
+  }
+
   .title h1 {
     font-size: 2rem;
   }
+
+  .secondary-text {
+    text-align: center;
+  }
+
+  .secondary-text p {
+    font-size: 0.95rem;
+  }
+
+  .secondary-image {
+    display: none;
+  }
+
+  .third-txt {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .third-txt h3 {
+    font-size: 1.6rem;
+  }
+
+  .third-txt p:first-of-type {
+    font-size: 1rem;
+  }
+
+  .third-txt p:last-of-type {
+    font-size: 0.95rem;
+  }
+
+  .third-txt .download-btn {
+    padding: 16px 35px;
+    font-size: 1rem;
+  }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .title, .get-started {
+    animation: fadeIn 0.5s ease-out;
+  }
+}
