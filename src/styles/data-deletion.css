@@ -1,5 +1,5 @@
-/* Delete Account Page Styles */
-.delete-acc-container {
+/* Data Deletion Page Styles */
+.data-deletion-container {
   background-image: url('../images/background.jpg');
   background-size: cover;
   background-position: center;
@@ -9,7 +9,7 @@
   flex-direction: column;
   position: relative;
   padding: 40px;
-  animation: deleteAccountFadeIn 0.6s ease-out;
+  animation: dataDeletionFadeIn 0.6s ease-out;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -18,7 +18,7 @@
 }
 
 /* Document card */
-.delete-card {
+.data-deletion-card {
   width: 100%;
   max-width: 800px;
   background: rgba(255, 255, 255, 0.95);
@@ -38,29 +38,11 @@
   min-height: 0;
   margin-bottom: 25px;
   max-height: calc(100vh - 220px);
-  animation: deleteAccountSlideUp 0.8s ease-out 0.2s both;
-  overflow: auto;
+  animation: dataDeletionSlideUp 0.8s ease-out 0.2s both;
+  overflow-y: auto;
 }
 
-.delete-card::-webkit-scrollbar {
-  width: 8px;
-}
-
-.delete-card::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
-}
-
-.delete-card::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.6);
-  border-radius: 4px;
-}
-
-.delete-card::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 92, 246, 0.8);
-}
-
-.delete-card::before {
+.data-deletion-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -74,8 +56,27 @@
   pointer-events: none;
 }
 
+/* Scrollbar styling */
+.data-deletion-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.data-deletion-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.data-deletion-card::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.6);
+  border-radius: 4px;
+}
+
+.data-deletion-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}
+
 /* Typography */
-.delete-card h1 {
+.data-deletion-card h1 {
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: -0.02em;
@@ -90,7 +91,36 @@
   z-index: 1;
 }
 
-.delete-card p {
+.data-deletion-card h2 {
+  color: #2d3748;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 35px 0 18px 0;
+  text-shadow: none;
+  padding: 15px 20px;
+  border-left: 4px solid #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 8px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.data-deletion-card h2:first-of-type {
+  margin-top: 20px;
+}
+
+.data-deletion-card h3 {
+  color: #4a5568;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 28px 0 14px 0;
+  text-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+
+.data-deletion-card p {
   color: #2d3748;
   line-height: 1.7;
   margin: 18px 0;
@@ -101,7 +131,46 @@
   z-index: 1;
 }
 
-.delete-card ul {
+/* Lists */
+.data-deletion-steps {
+  list-style: none;
+  counter-reset: step-counter;
+  padding-left: 0;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.data-deletion-steps li {
+  color: #2d3748;
+  line-height: 1.7;
+  margin: 15px 0;
+  padding-left: 45px;
+  position: relative;
+  text-shadow: none;
+  font-size: 1rem;
+  counter-increment: step-counter;
+}
+
+.data-deletion-steps li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.3);
+}
+
+.data-deletion-list {
   list-style: none;
   padding-left: 0;
   margin: 20px 0;
@@ -109,7 +178,7 @@
   z-index: 1;
 }
 
-.delete-card li {
+.data-deletion-list li {
   color: #2d3748;
   line-height: 1.7;
   margin: 12px 0;
@@ -119,7 +188,7 @@
   font-size: 1rem;
 }
 
-.delete-card li::before {
+.data-deletion-list li::before {
   content: "•";
   color: #a78bfa;
   font-size: 1.3em;
@@ -129,14 +198,14 @@
   text-shadow: 0 0 4px rgba(167, 139, 250, 0.5);
 }
 
-.delete-card strong {
+.data-deletion-card strong {
   color: #8b5cf6;
   font-weight: 700;
   text-shadow: none;
 }
 
 /* Delete Button */
-.delete-button {
+.data-deletion-button {
   background: linear-gradient(135deg, #ef4444, #dc2626);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(239, 68, 68, 0.3);
@@ -158,28 +227,28 @@
   position: relative;
   z-index: 1;
   text-decoration: none;
-  display: block; /* Changed from inline-block to block for proper button styling */
-  font-family: inherit; /* Ensures button uses same font as parent */
+  display: block;
+  font-family: inherit;
 }
 
-.delete-button:hover {
+.data-deletion-button:hover {
   background: linear-gradient(135deg, #dc2626, #b91c1c);
   transform: translateY(-2px);
   box-shadow: 0 6px 25px rgba(239, 68, 68, 0.5);
 }
 
-.delete-button:active {
+.data-deletion-button:active {
   transform: translateY(0);
   box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
 }
 
-.delete-button:focus {
+.data-deletion-button:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
 }
 
 /* Animations */
-@keyframes deleteAccountFadeIn {
+@keyframes dataDeletionFadeIn {
   from {
     opacity: 0;
   }
@@ -188,7 +257,7 @@
   }
 }
 
-@keyframes deleteAccountSlideUp {
+@keyframes dataDeletionSlideUp {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -201,7 +270,7 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .delete-acc-container {
+  .data-deletion-container {
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -209,51 +278,73 @@
     min-height: 100vh;
   }
 
-  .delete-card {
+  .data-deletion-card {
     padding: 30px;
     max-width: 100%;
     margin: 0;
     max-height: calc(100vh - 100px);
   }
 
-  .delete-card h1 {
+  .data-deletion-card h1 {
     font-size: 1.7rem;
   }
 
-  .delete-button {
+  .data-deletion-card h2 {
+    font-size: 1.25rem;
+    padding: 12px 15px;
+  }
+
+  .data-deletion-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .data-deletion-button {
     padding: 12px 25px;
     font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
-  .delete-acc-container {
+  .data-deletion-container {
     padding: 15px;
   }
 
-  .delete-card {
+  .data-deletion-card {
     padding: 25px;
     max-height: calc(100vh - 80px);
   }
 
-  .delete-card h1 {
+  .data-deletion-card h1 {
     font-size: 1.5rem;
   }
 
-  .delete-card p,
-  .delete-card li {
+  .data-deletion-card h2 {
+    font-size: 1.15rem;
+  }
+
+  .data-deletion-card h3 {
+    font-size: 1rem;
+  }
+
+  .data-deletion-card p,
+  .data-deletion-list li,
+  .data-deletion-steps li {
     font-size: 0.95rem;
   }
 
-  .delete-button {
+  .data-deletion-steps li {
+    padding-left: 40px;
+  }
+
+  .data-deletion-button {
     padding: 12px 20px;
     font-size: 0.9rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .delete-acc-container,
-  .delete-card {
-    animation: deleteAccountFadeIn 0.5s ease-out;
+  .data-deletion-container,
+  .data-deletion-card {
+    animation: dataDeletionFadeIn 0.5s ease-out;
   }
 }

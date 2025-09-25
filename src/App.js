@@ -4,7 +4,7 @@ import Home from './views/home'
 import ServiceErea from './views/cs'
 import Loading from './componenets/loading'
 import NotFound from './views/notfound';
-import DeleteAccount from './views/delete-account';
+import DataDeletion from './views/data-deletion';
 
 function App(){
   const [isLoading, setIsLoading] = useState(true);
@@ -50,7 +50,7 @@ function App(){
     { path:'/', element:<Home/>},
     { path:'/terms', element:<ServiceErea/>},
     { path:'/*', element:<NotFound/>},
-    { path:'/delete-account', element:<DeleteAccount/>}
+    { path:'/data-deletion', element:<DataDeletion/>}
 
   ])
 

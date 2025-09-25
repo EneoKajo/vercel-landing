@@ -1,5 +1,4 @@
 public/robots.txt:
 User-agent: *
 Allow: /
-Disallow: /checkout
-Disallow: /pay/
+Disallow: /data-deletion/
