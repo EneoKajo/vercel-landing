@@ -1,0 +1,259 @@
+/* Delete Account Page Styles */
+.delete-acc-container {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 40px;
+  animation: deleteAccountFadeIn 0.6s ease-out;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Document card */
+.delete-card {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    0 5px 15px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  margin-bottom: 25px;
+  max-height: calc(100vh - 220px);
+  animation: deleteAccountSlideUp 0.8s ease-out 0.2s both;
+  overflow: auto;
+}
+
+.delete-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.delete-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.delete-card::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.6);
+  border-radius: 4px;
+}
+
+.delete-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}
+
+.delete-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  border-radius: 24px;
+  pointer-events: none;
+}
+
+/* Typography */
+.delete-card h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #1a1a2e;
+  margin-bottom: 30px;
+  text-shadow: none;
+  line-height: 1.2;
+  text-align: center;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.3);
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.delete-card p {
+  color: #2d3748;
+  line-height: 1.7;
+  margin: 18px 0;
+  text-shadow: none;
+  font-size: 1rem;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.delete-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.delete-card li {
+  color: #2d3748;
+  line-height: 1.7;
+  margin: 12px 0;
+  padding-left: 25px;
+  position: relative;
+  text-shadow: none;
+  font-size: 1rem;
+}
+
+.delete-card li::before {
+  content: "•";
+  color: #a78bfa;
+  font-size: 1.3em;
+  position: absolute;
+  left: 0;
+  top: -2px;
+  text-shadow: 0 0 4px rgba(167, 139, 250, 0.5);
+}
+
+.delete-card strong {
+  color: #8b5cf6;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+/* Delete Button */
+.delete-button {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  margin: 30px auto;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  display: block; /* Changed from inline-block to block for proper button styling */
+  font-family: inherit; /* Ensures button uses same font as parent */
+}
+
+.delete-button:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(239, 68, 68, 0.5);
+}
+
+.delete-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.delete-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+}
+
+/* Animations */
+@keyframes deleteAccountFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes deleteAccountSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .delete-acc-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 100vh;
+  }
+
+  .delete-card {
+    padding: 30px;
+    max-width: 100%;
+    margin: 0;
+    max-height: calc(100vh - 100px);
+  }
+
+  .delete-card h1 {
+    font-size: 1.7rem;
+  }
+
+  .delete-button {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .delete-acc-container {
+    padding: 15px;
+  }
+
+  .delete-card {
+    padding: 25px;
+    max-height: calc(100vh - 80px);
+  }
+
+  .delete-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .delete-card p,
+  .delete-card li {
+    font-size: 0.95rem;
+  }
+
+  .delete-button {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .delete-acc-container,
+  .delete-card {
+    animation: deleteAccountFadeIn 0.5s ease-out;
+  }
+}
