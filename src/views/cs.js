@@ -22,7 +22,7 @@ function ServiceErea(){
       "id": "contact-us",
       "title": "Contact Us",
       "lastUpdated": "September 14, 2025",
-      "content": "# Contact Us\n\n## Get in Touch\n\nWe'd love to hear from you! Please reach out using any of the following methods:\n\n- **Email:** support@example.com"
+      "content": "# Contact Us\n\n## Get in Touch\n\nWe'd love to hear from you! Please reach out using any of the following methods:\n\n- **Email:** vercel.dream_ai@proton.me"
     }
   };
 

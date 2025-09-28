@@ -51,7 +51,7 @@ function DataDeletion() {
           </p>
 
           <button
-            onClick={() => window.location.href = 'mailto:vesperapp.support@gmail.com?subject=Delete My Account'}
+            onClick={() => window.location.href = 'mailto:vercel.dream_ai@proton.me?subject=Delete My Account'}
             className="data-deletion-button"
           >
             Email Us to Delete Account
